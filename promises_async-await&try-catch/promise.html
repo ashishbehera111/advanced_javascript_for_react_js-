@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function getcheese(){
+        return new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                const cheese = "cheese" 
+               // console.log(`here is the cheese`,cheese)
+                resolve(cheese)
+              },2000)
+        })
+      }
+
+      function makedough(cheese){
+        return new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                const dough =  cheese +"dough"
+               // console.log(`here is the cheese`,dough)
+                //resolve(dough)
+                reject("bad cheese")
+              },2000)
+        })
+      }
+      function bakepizza(dough){
+        return new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                const pizza =  dough +"pizza"
+               // console.log(`here is the cheese`,pizza)
+                resolve(pizza)
+              },2000)
+        })
+      }
+      getcheese()
+      .then((cheese)=>{
+      console.log("here is the cheese ",cheese)
+      return makedough(cheese)
+      })
+      .then((dough)=>{
+      console.log("here is the dough ",dough)
+      return makedough(dough)
+      })
+      .then((pizza)=>{
+      console.log("here is the pizza ",pizza)
+      return makedough(pizza)
+      })
+      .catch((data)=>{
+        console.log("error occord",data)
+      })
+      .finally(()=>{
+        console.log("i am always executed ")
+      })
+      
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
