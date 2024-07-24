@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //function scope 
+        function accure(){
+               if(true){
+                var a=10
+                a=30
+                 }
+             console.log(a)
+                          }
+                       accure()
+  //block scope function 
+        function victor(){
+            if(true){
+                let b="ashish"
+                b="behera"
+                console.log(b) 
+            }
+            
+        }   
+        victor() 
+        //blockscope function 
+        function rahul(){
+            if(true){
+                const c="300"
+                
+             document.write(c,"<br>")
+            }
+        }
+        rahul()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
